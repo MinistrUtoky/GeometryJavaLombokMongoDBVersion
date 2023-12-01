@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.javafxapp.IntersectfigureView"
+            prefHeight="400.0" prefWidth="600.0">
+    <GridPane maxWidth="800" gridLinesVisible="false" visible="true" fx:id="IntersectionForm" GridPane.rowIndex="0">
+        <rowConstraints>
+            <RowConstraints percentHeight="2.5"/>
+            <RowConstraints percentHeight="5"/>
+            <RowConstraints percentHeight="2.5"/>
+            <RowConstraints percentHeight="5"/>
+            <RowConstraints percentHeight="2.5"/>
+            <RowConstraints percentHeight="82.5"/>
+        </rowConstraints>
+        <columnConstraints>
+            <ColumnConstraints prefWidth="250" maxWidth="42"/>
+            <ColumnConstraints prefWidth="250" maxWidth="115"/>
+            <ColumnConstraints prefWidth="250" maxWidth="50"/>
+            <ColumnConstraints prefWidth="250" maxWidth="115"/>
+            <ColumnConstraints prefWidth="250" maxWidth="90"/>
+            <ColumnConstraints prefWidth="250" maxWidth="130"/>
+            <ColumnConstraints prefWidth="250" maxWidth="50"/>
+        </columnConstraints>
+        <ComboBox prefWidth="200" fx:id="ShapeFilter" GridPane.rowIndex="1" GridPane.columnIndex="1">
+            <items>
+            </items>
+        </ComboBox>
+        <ComboBox prefWidth="200" fx:id="FigureToIntersect1" GridPane.rowIndex="3" GridPane.columnIndex="1">
+            <items>
+            </items>
+        </ComboBox>
+        <ComboBox prefWidth="200" fx:id="FigureToIntersect2" GridPane.rowIndex="3" GridPane.columnIndex="3">
+            <items>
+            </items>
+        </ComboBox>
+        <Button disable="true" prefWidth="200" GridPane.columnIndex="5" GridPane.rowIndex="1"
+                fx:id="ShapesIntersectionButton" onAction="#IntersectShapes_Click">Intersect Shapes</Button>
+        <Button prefWidth="200" fx:id="CloseButton" GridPane.columnIndex="5" GridPane.rowIndex="3" onAction="#CloseWindow">
+            Cancel
+        </Button>
+    </GridPane>
+</AnchorPane>

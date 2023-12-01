@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import java.lang.String?>
+<?import java.lang.Boolean?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory?>
+<VBox maxWidth="782" maxHeight="560" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.javafxapp.HelloController">
+        <GridPane>
+                <rowConstraints>
+                        <RowConstraints percentHeight="3.5"/>
+                        <RowConstraints percentHeight="96.5"/>
+                </rowConstraints>
+                <columnConstraints>
+                        <ColumnConstraints maxWidth="800"/>
+                </columnConstraints>
+                <GridPane maxWidth="800" gridLinesVisible="false" visible="true" fx:id="MainFormGrid">
+                        <columnConstraints>
+                                <ColumnConstraints percentWidth="0.625"/>
+                                <ColumnConstraints percentWidth="0.075"/>
+                                <ColumnConstraints percentWidth="0.187"/>
+                                <ColumnConstraints percentWidth="0.113"/>
+                        </columnConstraints>
+
+                        <Canvas fx:id="MainCanvas"  height="500" width="500" GridPane.columnIndex="0">
+                        </Canvas>
+
+                        <VBox alignment="TOP_LEFT" GridPane.columnIndex="2">
+                                <padding>
+                                        <Insets top="2"/>
+                                </padding>
+                                <Button prefWidth="300" text="Add Figure" onAction="#OpenFigureAdditionForm"/>
+                                <Button prefWidth="300" text="Save preset to database" onAction="#SaveToDB_Click"/>
+                                <Button prefWidth="300" text="Upload preset from database" onAction="#UploadFromDB_Click"/>
+                                <Button prefWidth="300" text="Export preset" onAction="#ShowSaveFileDialog"/>
+                                <Button prefWidth="300" text="Import preset" onAction="#ShowUploadFileDialog"/>
+                                <Button prefWidth="300" text="Save image" onAction="#ShowSaveImageDialog"/>
+                                <Button prefWidth="300" text="Move Figure" onAction="#OpenFigureMovementForm"/>
+                                <Button prefWidth="300" text="Remove Figure" onAction="#OpenFigureRemovalForm"/>
+                                <Button text="Clear Canvas" prefWidth="300" fx:id="Clear" onAction="#Clear_Click"></Button>
+                                <Button text="Shape's Area" prefWidth="300" fx:id="ShapeArea" onAction="#ShapeArea_Click"/>
+                                <Button text="Shape's Perimeter" prefWidth="300" fx:id="ShapePerimeter" onAction="#ShapePerimeter_Click"/>
+                                <Button text="Shapes' Areas Total"  prefWidth="300" fx:id="Area" onAction="#Area_Click"/>
+                                <Button text="Shapes' Perimeters Total" prefWidth="300" fx:id="Perimeter" onAction="#Perimeter_Click"/>
+                                <Button prefWidth="300" text="Intersection" onAction="#OpenIntersectionForm"/>
+                        </VBox>
+
+                        <Text translateY="200" GridPane.halignment="RIGHT" textAlignment="RIGHT"
+                              fx:id="PerimeterOrArea" GridPane.columnIndex="1" GridPane.columnSpan="2"/>
+
+                </GridPane>
+        </GridPane>
+</VBox>

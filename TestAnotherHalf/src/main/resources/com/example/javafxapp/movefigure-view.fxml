@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.javafxapp.MovefigureView"
+            prefHeight="400.0" prefWidth="600.0">
+    <GridPane maxWidth="800" gridLinesVisible="false" visible="true" fx:id="FigureMovementForm" GridPane.rowIndex="0">
+        <rowConstraints>
+            <RowConstraints percentHeight="2.5"/>
+            <RowConstraints percentHeight="5"/>
+            <RowConstraints percentHeight="2.5"/>
+            <RowConstraints percentHeight="5"/>
+            <RowConstraints percentHeight="5"/>
+            <RowConstraints percentHeight="5"/>
+            <RowConstraints percentHeight="75"/>
+        </rowConstraints>
+        <columnConstraints>
+            <ColumnConstraints prefWidth="250" maxWidth="40"/>
+            <ColumnConstraints prefWidth="250" maxWidth="10"/>
+            <ColumnConstraints prefWidth="250" maxWidth="41"/>
+            <ColumnConstraints prefWidth="250" maxWidth="10"/>
+            <ColumnConstraints prefWidth="250" maxWidth="41"/>
+            <ColumnConstraints prefWidth="250" maxWidth="10"/>
+            <ColumnConstraints prefWidth="250" maxWidth="90"/>
+            <ColumnConstraints prefWidth="250" maxWidth="40"/>
+            <ColumnConstraints prefWidth="250" maxWidth="10"/>
+            <ColumnConstraints prefWidth="250" maxWidth="140"/>
+            <ColumnConstraints prefWidth="250" maxWidth="40"/>
+            <ColumnConstraints prefWidth="250" maxWidth="10"/>
+            <ColumnConstraints prefWidth="250" maxWidth="120"/>
+            <ColumnConstraints prefWidth="250" maxWidth="10"/>
+        </columnConstraints>
+        <ComboBox GridPane.columnSpan="4" prefWidth="200" fx:id="MovementType" GridPane.rowIndex="1"
+                  GridPane.columnIndex="1" onAction="#MovementTypeChanged">
+            <items>
+            </items>
+        </ComboBox>
+        <ComboBox GridPane.columnSpan="4" prefWidth="200" fx:id="FigureToMove" GridPane.rowIndex="3"
+                  GridPane.columnIndex="1" onAction="#FigureToMoveChanged">
+            <items>
+            </items>
+        </ComboBox>
+        <Text visible="false" GridPane.rowIndex="4" GridPane.columnIndex="1">Position shift value: </Text>
+        <Text visible="false" GridPane.rowIndex="5" GridPane.columnIndex="1" >x:</Text>
+        <TextField visible="false" disable="true"  GridPane.rowIndex="5" GridPane.columnIndex="2"
+                   fx:id="ShiftXCoord"></TextField>
+        <Text visible="false" GridPane.rowIndex="5" GridPane.columnIndex="3" >y:</Text>
+        <TextField visible="false" disable="true"  GridPane.rowIndex="5" GridPane.columnIndex="4"
+                   fx:id="ShiftYCoord"></TextField>
+        <Text visible="false" GridPane.rowIndex="5" GridPane.columnIndex="6" >Rotation angle: </Text>
+        <TextField visible="false" disable="true"  GridPane.rowIndex="5" GridPane.columnIndex="7"
+                   fx:id="RotationAngle"></TextField>
+        <Text visible="false" GridPane.rowIndex="5" GridPane.columnIndex="9" >Axis for shape reflection: </Text>
+        <Spinner visible="false" disable="true" GridPane.columnSpan="2"  GridPane.rowIndex="5" GridPane.columnIndex="10"
+                 fx:id="AxisMirroringSpinner"></Spinner>
+        <Button disable="true" GridPane.rowIndex="1" GridPane.columnSpan="2" GridPane.columnIndex="11" prefWidth="200"
+                fx:id="MoveFigureButton" onAction="#MoveFigure_Click">Move Shape</Button>
+        <Button prefWidth="200" fx:id="CloseButton" GridPane.columnSpan="2" GridPane.columnIndex="11" GridPane.rowIndex="3" onAction="#CloseWindow">
+            Cancel
+        </Button>
+    </GridPane>
+</AnchorPane>
